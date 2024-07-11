@@ -32,7 +32,7 @@ const App = () => {
             <AudioPlayer />
           </Fragment>
         )}
-      <Switch>
+      <Routes>
         <Route exact path="/" component={Main} />
         <PrivateRoute exact user={user} path="/home" component={Home} />
         <PrivateRoute
