@@ -61,7 +61,7 @@ const App = () => {
         <Route path="/login" component={Login} />
         <Route path="/not-found" component={NotFound} />
         <Redirect to="/not-found" />
-      </Switch>
+      </Routes>
     </Fragment>
   );
 };
