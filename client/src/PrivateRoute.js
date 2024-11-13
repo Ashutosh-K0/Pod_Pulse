@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
   const styles = {
@@ -11,15 +11,13 @@ const PrivateRoute = ({ component: Component, user, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={(props) =>
+      element={
         user ? (
           <div style={styles}>
-            <Component {...props} />
+            <Component />
           </div>
         ) : (
-          <Redirect
-            to={{ pathname: "/login", state: { from: props.location } }}
-          />
+          <Navigate to="/login" replace state={{ from: rest.path }} />
         )
       }
     />

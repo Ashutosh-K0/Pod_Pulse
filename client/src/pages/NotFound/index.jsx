@@ -1,3 +1,4 @@
+/*
 import { useHistory } from "react-router-dom";
 import record from "../../images/record.svg";
 import recordArm from "../../images/record-arm.svg";
@@ -27,3 +28,4 @@ const NotFound = () => {
 };
 
 export default NotFound;
+*/

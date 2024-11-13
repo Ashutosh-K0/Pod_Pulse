@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Switch, Route, Redirect, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Main from "./pages/Main";
 import SignUp from "./pages/SignUp";
@@ -33,34 +33,37 @@ const App = () => {
           </Fragment>
         )}
       <Routes>
-        <Route exact path="/" component={Main} />
-        <PrivateRoute exact user={user} path="/home" component={Home} />
-        <PrivateRoute
-          exact
-          user={user}
+        <Route path="/" element={<Main />} />
+        <Route
+          path="/home"
+          element={<PrivateRoute user={user} component={<Home />} />}
+        />
+        <Route
           path="/collection/tracks"
-          component={LikedSongs}
+          element={<PrivateRoute user={user} component={<LikedSongs />} />}
         />
-        <PrivateRoute
-          exact
-          user={user}
+        <Route
           path="/collection/playlists"
-          component={Library}
+          element={<PrivateRoute user={user} component={<Library />} />}
         />
-        <PrivateRoute exact user={user} path="/search" component={Search} />
-        <PrivateRoute
-          exact
-          user={user}
+        <Route
+          path="/search"
+          element={<PrivateRoute user={user} component={<Search />} />}
+        />
+        <Route
           path="/playlist/:id"
-          component={Playlist}
+          element={<PrivateRoute user={user} component={<Playlist />} />}
         />
-        <PrivateRoute exact user={user} path="/me" component={Profile} />
-        {user && <Redirect from="/signup" to="/home" />}
-        {user && <Redirect from="/login" to="/home" />}
-        <Route path="/signup" component={SignUp} />
-        <Route path="/login" component={Login} />
-        <Route path="/not-found" component={NotFound} />
-        <Redirect to="/not-found" />
+        <Route
+          path="/me"
+          element={<PrivateRoute user={user} component={<Profile />} />}
+        />
+        {user && <Route path="/signup" element={<Navigate to="/home" />} />}
+        {user && <Route path="/login" element={<Navigate to="/home" />} />}
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
     </Fragment>
   );

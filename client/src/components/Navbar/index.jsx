@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ClickAwayListener } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
@@ -13,15 +13,15 @@ import styles from "./styles.module.scss";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate(); // useNavigate replaces useHistory
 
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <div className={styles.icon} onClick={() => history.goBack()}>
+        <div className={styles.icon} onClick={() => navigate(-1)}>
           <ArrowBackIosRoundedIcon />
         </div>
-        <div className={styles.icon} onClick={() => history.goForward()}>
+        <div className={styles.icon} onClick={() => navigate(1)}>
           <ArrowForwardIosRoundedIcon />
         </div>
       </div>
