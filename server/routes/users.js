@@ -3,7 +3,7 @@ const { User, validate } = require("../models/user");
 const bcrypt = require("bcrypt");
 const admin = require("../middleware/admin");
 const auth = require("../middleware/auth");
-const validateObjectId = require("../middleware/validateObjectId");
+const validateObjectId = require("D:/VITC/Assignments/Semester_5/Pod_Pulse/server/middleware/validObjectId.js");
 
 // create user
 router.post("/", async (req, res) => {

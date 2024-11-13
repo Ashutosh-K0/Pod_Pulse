@@ -3,7 +3,7 @@ const { User } = require("../models/user");
 const { Song, validate } = require("../models/song");
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
-const validateObjectId = require("../middleware/validateObjectId");
+const validateObjectId = require("D:/VITC/Assignments/Semester_5/Pod_Pulse/server/middleware/validObjectId.js");
 
 // Create song
 router.post("/", admin, async (req, res) => {

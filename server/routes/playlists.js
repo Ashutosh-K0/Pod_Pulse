@@ -3,7 +3,7 @@ const { PlayList, validate } = require("../models/playList");
 const { Song } = require("../models/song");
 const { User } = require("../models/user");
 const auth = require("../middleware/auth");
-const validateObjectId = require("../middleware/validateObjectId");
+const validateObjectId = require("D:/VITC/Assignments/Semester_5/Pod_Pulse/server/middleware/validObjectId.js");
 const Joi = require("joi");
 
 // create playlist
