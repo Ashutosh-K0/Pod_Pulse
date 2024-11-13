@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a56b34d6.css",
+    "main.js": "/static/js/main.1a4762b7.js",
+    "static/media/peaches.jpg": "/static/media/peaches.725ee2082ee87f1e03b2.jpg",
+    "static/media/black_logo.svg": "/static/media/black_logo.28096ef21d1cf6d0899d5e987bde8016.svg",
+    "static/media/white_logo.svg": "/static/media/white_logo.2d27313c01fa11e861ddc27d637843b9.svg",
+    "index.html": "/index.html",
+    "main.a56b34d6.css.map": "/static/css/main.a56b34d6.css.map",
+    "main.1a4762b7.js.map": "/static/js/main.1a4762b7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a56b34d6.css",
+    "static/js/main.1a4762b7.js"
+  ]
+}

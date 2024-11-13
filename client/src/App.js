@@ -16,7 +16,7 @@ import LikedSongs from "./pages/LikedSongs";
 import Profile from "./pages/Profile";
 
 const App = () => {
-  const user = true;
+  const user = true; // Replace with actual user authentication logic
   const location = useLocation();
 
   return (
@@ -36,32 +36,33 @@ const App = () => {
         <Route path="/" element={<Main />} />
         <Route
           path="/home"
-          element={<PrivateRoute user={user} component={<Home />} />}
+          element={<PrivateRoute user={user} element={<Home />} />}
         />
         <Route
           path="/collection/tracks"
-          element={<PrivateRoute user={user} component={<LikedSongs />} />}
+          element={<PrivateRoute user={user} element={<LikedSongs />} />}
         />
         <Route
           path="/collection/playlists"
-          element={<PrivateRoute user={user} component={<Library />} />}
+          element={<PrivateRoute user={user} element={<Library />} />}
         />
         <Route
           path="/search"
-          element={<PrivateRoute user={user} component={<Search />} />}
+          element={<PrivateRoute user={user} element={<Search />} />}
         />
         <Route
           path="/playlist/:id"
-          element={<PrivateRoute user={user} component={<Playlist />} />}
+          element={<PrivateRoute user={user} element={<Playlist />} />}
         />
         <Route
           path="/me"
-          element={<PrivateRoute user={user} component={<Profile />} />}
+          element={<PrivateRoute user={user} element={<Profile />} />}
         />
-        {user && <Route path="/signup" element={<Navigate to="/home" />} />}
-        {user && <Route path="/login" element={<Navigate to="/home" />} />}
+
+        {/* Allow direct access to Login/Signup routes */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+
         <Route path="/not-found" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
